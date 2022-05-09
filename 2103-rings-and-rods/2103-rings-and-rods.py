@@ -5,11 +5,12 @@ class Solution:
             pos = rings[i+1]
             ring = rings[i]
             if(pos in d):
-                s = d[pos]
-                s.add(ring)
+                lst = d[pos]
+                if(ring not in lst):
+                    lst.append(ring)
                 
             else:
-                d[pos] = {ring}
+                d[pos] = [ring]
         
         count = 0
         for key , value in d.items():
