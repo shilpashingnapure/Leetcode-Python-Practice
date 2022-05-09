@@ -6,7 +6,8 @@ class Solution:
             bag = ""
             for j in range(i , len(words)):
                 bag += words[j]
-                substrings.append(bag)
+                if bag not in substrings:
+                    substrings.append(bag)
         
         for i in patterns:
             if i in substrings:
