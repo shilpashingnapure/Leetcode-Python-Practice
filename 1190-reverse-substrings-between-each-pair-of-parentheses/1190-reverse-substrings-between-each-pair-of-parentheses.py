@@ -10,10 +10,9 @@ class Solution:
                 
                 start = stack.pop()
                 end = i
-                rev = ""
-                for j in range(end-1 , start , -1):
-                    rev += s[j]
-                s[start+1:end] = rev
+                rev = s[start+1:end]
+                
+                s[start+1:end] = rev[::-1]
                    
         return ''.join(s).replace("(" , '').replace(")" , '')
                 
