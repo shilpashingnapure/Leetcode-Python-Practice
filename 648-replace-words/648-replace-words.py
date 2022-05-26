@@ -3,15 +3,13 @@ class Solution:
         dictionary = sorted(dictionary)
         arr = sentence.split(" ")
         ans = []
-        for i in arr:
-            a = i
+        for i in range(len(arr)):
             for j in dictionary:
-                if(i.startswith(j)):
-                    a = j
-                    break
+                if(arr[i].startswith(j)):
+                    arr[i] = j
                     
-            ans.append(a)
-        return " ".join(ans)
+           
+        return " ".join(arr)
             
                     
                 
