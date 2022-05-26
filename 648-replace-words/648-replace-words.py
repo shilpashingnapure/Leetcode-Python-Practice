@@ -1,6 +1,6 @@
 class Solution:
     def replaceWords(self, dictionary: List[str], sentence: str) -> str:
-        dictionary = sorted(set(dictionary))
+        dictionary = sorted(dictionary)
         arr = sentence.split(" ")
         ans = []
         for i in arr:
