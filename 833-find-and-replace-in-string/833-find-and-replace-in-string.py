@@ -5,12 +5,12 @@ class Solution:
         j = 0
         while j < len(s):
             if j in indices:
-                count = indices.index(j)
-                print(s[j:j+len(sources[count])] , sources[count])
+                index = indices.index(j)
+                print(s[j:j+len(sources[index])] , sources[index])
                 
-                if s[j:j+len(sources[count])] == sources[count] and j == indices[count]:
-                    ans += targets[count]
-                    j += len(sources[count])
+                if s[j:j+len(sources[index])] == sources[index] and j == indices[index]:
+                    ans += targets[index]
+                    j += len(sources[index])
                 else:
                     ans += s[j]
                     j += 1
