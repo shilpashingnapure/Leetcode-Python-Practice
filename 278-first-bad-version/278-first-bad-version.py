@@ -6,7 +6,7 @@ class Solution:
         left = 1
         ans = n  
         while(left <= n):
-            mid = ((left + n) // 2)
+            mid = (left + n) // 2
             isbad = isBadVersion(mid)
             if isbad:
                 ans = mid
