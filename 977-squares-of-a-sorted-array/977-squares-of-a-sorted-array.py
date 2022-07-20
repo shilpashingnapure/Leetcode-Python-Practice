@@ -12,7 +12,7 @@ class Solution:
                 left += 1
         return arr
                 
-             # 16 100
+        
     
             
               
