@@ -1,16 +1,20 @@
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
-        d = {1:0}
+        countFreshOrange = 0 
         N = len(grid)
         M = len(grid[0])
+        
         que = []
         for i in range(N):
             for j in range(M):
                 if grid[i][j] == 1:
-                    d[1] += 1
+                    countFreshOrange += 1
+                    
                 if grid[i][j] == 2:
                     que.append((i , j))
-        if d[1] == 0:return 0
+                    
+                    
+        if countFreshOrange == 0:return 0
         
         def bfs(r , c):
             count = 0
@@ -35,17 +39,17 @@ class Solution:
             
             return count
         ans = 0
-        while que and d[1] > 0:
+        while que and countFreshOrange > 0:
             
             ans += 1
             for i in range(len(que)):
                 r,c = que.pop(0)
                 m = bfs(r,c)
-                d[1] -= m
+                countFreshOrange -= m
             
             
             
-        if d[1] != 0: return -1             
+        if countFreshOrange != 0: return -1             
         return ans
  
     
