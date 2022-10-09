@@ -7,9 +7,8 @@ class Solution:
             if j < k-1:
                 j += 1
             elif j - i + 1 == k:
-                a = min(nums[i:j+1])
-                b = max(nums[i:j+1])
-                m = min(m , b-a)
+               
+                m = min(m , nums[j]-nums[i])
                 i += 1
                 j += 1
         return m
