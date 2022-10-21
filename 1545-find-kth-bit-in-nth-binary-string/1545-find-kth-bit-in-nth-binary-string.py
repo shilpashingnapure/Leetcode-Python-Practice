@@ -15,6 +15,8 @@ class Solution:
         def findK(n):
             if n == 1:
                 return "0"
-            return findK(n-1) + '1' + invert(findK(n-1))[::-1]
+            s = findK(n-1)
+            e = '1' + invert(s)[::-1]
+            return s + e
             
         return findK(n)[k-1]
