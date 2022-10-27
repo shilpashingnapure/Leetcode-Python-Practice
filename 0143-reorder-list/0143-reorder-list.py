@@ -8,7 +8,7 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
-        prev = head
+        
         slow = head
         fast = head
         prevs = []
@@ -16,12 +16,11 @@ class Solution:
         while fast and fast.next:
             prevs.append(slow.val)
             slow = slow.next
-            prev = slow
             fast = fast.next.next
         
-        while prev:
-            nextt.append(prev.val)
-            prev = prev.next
+        while slow:
+            nextt.append(slow.val)
+            slow = slow.next
         
         i = 0
         temp = head
